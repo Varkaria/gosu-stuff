@@ -4,7 +4,7 @@ const osuavatarurl = 'https://a.ppy.sh' // Current osu! Avatar url
 // 💘 This function will getting about user infomation from username or userid in bancho server
 async function GetUserInfomation(user, apikey) {
     const response = await fetch(osuapiurl + `/api/get_user?u=${user}&k=${apikey}}`)
-    const data = await response.json()
+    const data = await response.json().data
     return data[0] // Selecting in first data in array
 }
 
@@ -19,13 +19,13 @@ async function GetUserAvatar(user, apikey) {
 // 📜 This function will getting about user best scores from username or userid in bancho server
 async function GetUserBest(user, apikey) {
     const response = await fetch(osuapiurl + `/api/get_user_best?u=${user}&k=${apikey}}`)
-    const data = await response.json()
+    const data = await response.json().data
     return data // Selecting in first data in array
 }
 
 // 📜 This function will getting about user recent scores from username or userid in bancho server
 async function GetUserRecent(user, apikey) {
     const response = await fetch(osuapiurl + `/api/get_user_recent?u=${user}&k=${apikey}}`)
-    const data = await response.json()
+    const data = await response.json().data
     return data // Selecting in first data in array
 }
